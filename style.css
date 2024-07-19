@@ -7,7 +7,7 @@ body{
 
 .grid-container{
     display: grid;
-    grid-template-columns: 20% auto;
+    grid-template-columns: 15% auto;
     grid-auto-rows: auto;
 }
 
@@ -28,6 +28,9 @@ body{
 
 .sidebar .section1-logo h1{
     color: blueviolet;
+    -webkit-text-stroke-color: aliceblue;
+    -webkit-text-stroke-width: 0.5px;
+    text-shadow: 0 0 20px blueviolet, 0 0 20px blueviolet, 0 0 20px blueviolet;
 }
 
 .section2-nav{
@@ -64,8 +67,19 @@ li a:hover{
     /* font-size: 20px; */
     padding: 15px;
     border-radius: 10px;
+    /* box-shadow: -10px 10px 5px blueviolet, 10px 3px 10px blueviolet, 10px 1px 10px blueviolet, 10px 1px 10px blueviolet; */
     
 }
 
+.main{
+    display: grid;
+    grid-auto-columns: auto;
+    grid-template-rows: 10% 20% auto;
+}
 
+.hero .hero-card{
+    background-image: linear-gradient(to left, blueviolet, #aa6ce4, #aa6ce4);
+    border-radius: 30px;
+    padding: 10px;
+}
 
