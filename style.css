@@ -3,6 +3,7 @@ body{
     margin: 0;
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* position: relative; */
     
 }
 
@@ -171,6 +172,7 @@ li a:hover{
     /* margin-inline: auto; */
     padding-inline: 1rem;
     
+    
 }
 
 .book-grid{
@@ -206,8 +208,57 @@ li a:hover{
     
 }
 
+/* .blur-container{
+    opacity: 60%;
+    background-color: blueviolet;
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    top: 5%;
+} */
+
+.newBookForm{
+    display: none;
+    /* border: solid blueviolet 2px; */
+    border-radius: 10px;
+    z-index: 10;
+    background-color: rgb(46, 41, 48);
+    height: 350px;
+    width: 300px;
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-content: center;
+    position: absolute;
+    left: 45%;
+    top: 15%;
+    box-shadow: 0 0 50px aliceblue, 0 0 50px aliceblue, 0 0 50px aliceblue;
+
+}
+
+.newBookForm input{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(230, 214, 239);
+    border-radius: 5px;
+    height: 30px;
+}
 
 
+.newBookForm label{
+    display: flex;
+    flex-wrap: nowrap;
+    color: aliceblue;
+}
 
+#imgUpload{
+    color: aliceblue;
+    background-color:rgb(46, 41, 48) ;
+}
 
-
+.radiobtns{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}

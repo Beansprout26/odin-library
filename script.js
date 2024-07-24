@@ -1,11 +1,23 @@
 const myLibrary = [];
 
-function Book(){
+const myBook = {
+    bookTitle: '',
 
 }
 
-document.getElementById('add-book-icon').addEventListener('click', addBookToLibrary)
+function Book(title, author, pages, read){
 
-function addBookToLibrary(){
-    alert("button clicked!")
 }
+
+//shows the form when the add book icon is clicked//
+document.getElementById('add-book-icon').addEventListener('click', openForm);
+
+function openForm() {
+    let form = document.querySelector('.newBookForm');
+    if (form) {
+        form.style.display = 'block';
+    } else {
+        console.error("Form not found");
+    }
+}
+
