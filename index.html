@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library</title>
 </head>
 <body>
 
@@ -72,12 +72,12 @@
                     </div>
                     <div class="book-card">
                         <img src="assets/book4.jpg" alt="Book Cover">
-                        <!-- <div class="card-content"> -->
+                        <div class="card-content">
                             <h2 class="card-title">Book Title:</h2>
                             <p class="card-author">Author Name:</p>
                             <p class="card-page-number">Numer of Pages:</p>
                             <p class="card-read">Read:</p>
-                        <!-- </div> -->
+                        </div>
                         
                     </div>
                     <div class="book-card">
@@ -132,9 +132,23 @@
                     
                 </div>
             </div>
-                
-            </div>
         </div>
+
+                <form action="" method="get" class="newBookForm">
+                    <input type="file" accept=".jpeg, .png" >
+                    <label for="bookTitle">Book Title: </label>
+                    <input type="text" id="bookTitle" name="bookTitle">
+                    <label for="bookAuthor">Book Author: </label>
+                    <input type="text" id="bookAuthor" name="bookAuthor">
+                    <label for="bookPages">Number of Pages: </label>
+                    <input type="number" id="bookPages" name="bookPages">
+                    <label for="readStatus">Have you read it?</label>
+                    <label for="readTrue">Yes</label>
+                    <input type="radio" id="readTrue" name="readTrue" value="True">
+                    <label for="readFalse">No</label>
+                    <input type="radio" id="readFalse" name="readFalse" value="False">
+                </form>
+            
 
     </div>
     

@@ -1,5 +1,5 @@
 body{
-    background-color: aliceblue;;
+    background-color: white;
     margin: 0;
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,7 +8,7 @@ body{
 
 img, picture{
     max-width: 100%;
-    display: block;
+    /* display: block; */
 }
 .grid-container{
     display: grid;
@@ -94,6 +94,7 @@ li a:hover{
     display: grid;
     grid-auto-columns: auto;
     grid-template-rows: 100px 175px auto;
+   
 }
 
 .main-header{
@@ -103,6 +104,7 @@ li a:hover{
     overflow: hidden;
     padding: 10px;
     align-items: center;
+    
 }
 
 .main-header i{
@@ -125,6 +127,7 @@ li a:hover{
     grid-column: 3/4;
     justify-self: right;
     padding-right: 5%;
+    
     /* animation: 2s infinite pulse; */
     /* animation-composition: add; */
     /* animation-iteration-count: 3; */
@@ -186,15 +189,16 @@ li a:hover{
     aspect-ratio: 1/1;
     object-fit:contain;
     padding-top: 15px;
+    /* border: solid yellow; */
 }
 
 .book-card{
     display: flex;
     flex-direction: column;
-    border: none;
+    /* border: solid blue; */
     background-color: rgb(230, 214, 239);
     border-radius: 15px;
-    box-shadow: 5px 5px 30px grey;
+    box-shadow: 5px 5px 15px grey;
    
 
     /* align-content: center; */
