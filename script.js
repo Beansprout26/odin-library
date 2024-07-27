@@ -21,14 +21,15 @@ function addBookToLibrary(Book){
     myLibrary.push(newBook);
     console.log(myLibrary);
     
+
 }
 
 
 //shows the form when the add book icon is clicked//
 document.getElementById('add-book-icon').addEventListener('click', openForm);
 
-function openForm() {
-    let form = document.querySelector('.newBookForm');
+let form = document.querySelector('.newBookForm');
+function openForm() { 
     if (form) {
         form.style.display = 'block';
     } else {
@@ -40,4 +41,16 @@ function openForm() {
 document.querySelector('.newBookForm').addEventListener('submit', function(event){
     event.preventDefault();
     addBookToLibrary(Book);
+    form.reset();
+    form.style.display = 'none';
+  
 })
+
+function displayNewBook(){
+    
+}
+
+
+
+
+
