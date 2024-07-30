@@ -20,13 +20,13 @@ img, picture{
 
 .sidebar{
     background-color: rgb(46, 41, 48);
-    /* height: 100vh; */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     /* overflow: hidden; */
     position: sticky;
-    position:-webkit-sticky;
+    top: 0;
     overflow:auto;
   
 }
@@ -95,6 +95,8 @@ li a:hover{
     display: grid;
     grid-auto-columns: auto;
     grid-template-rows: 100px 175px auto;
+    height: 100vh;
+    overflow-y: auto;
    
 }
 
@@ -105,6 +107,9 @@ li a:hover{
     overflow: hidden;
     padding: 10px;
     align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 0;
     
 }
 
@@ -141,23 +146,14 @@ li a:hover{
     width: 60px;
 }
 
-@keyframes pulse{
-    /* from {height: 40px; width: 50px;}
-    to {height: 35px; width: 60px;}
-    to {height: 60px; width: 80px;} */
-    
-    /* 0%{
-        filter: hue-rotate(90deg);
-    }
-    100%{
-        filter: hue-rotate(-90deg);
-    } */
-    
-}
 
 .hero{
     padding: 20px;
     padding-top: 0;
+    position: sticky;
+    top: 100px;
+    overflow-x: hidden;
+    background-color: white;
 }
 
 .hero .hero-card{
@@ -170,27 +166,28 @@ li a:hover{
 .book-card-container{
     /* max-width: 100rem; */
     /* margin-inline: auto; */
-    padding-inline: 1rem;
-    
+    padding-inline: 2rem;
+    min-height: 100vh;
+    overflow-y:visible;
     
 }
 
 .book-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 300px));
     grid-auto-rows: auto;
     gap: 2rem;
-    
-    
-
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .book-card img{
-    height: 100%;
-    width: 100%;
+    height: 75%;
+    width: 75%;
     aspect-ratio: 1/1;
     object-fit:contain;
     padding-top: 15px;
+    align-self: center;
     /* border: solid yellow; */
 }
 
@@ -201,21 +198,15 @@ li a:hover{
     background-color: rgb(230, 214, 239);
     border-radius: 15px;
     box-shadow: 5px 5px 15px grey;
-   
 
-    /* align-content: center; */
-    /* height: 200px; */
     
 }
 
-/* .blur-container{
-    opacity: 60%;
-    background-color: blueviolet;
-    position: absolute;
-    height: 60%;
-    width: 100%;
-    top: 5%;
-} */
+.card-content{
+    padding-left: 20px;
+    padding-right: 20px;
+    aspect-ratio: 1/1;
+}
 
 .newBookForm{
     display: none;
@@ -256,9 +247,3 @@ li a:hover{
     background-color:rgb(46, 41, 48) ;
 }
 
-.radiobtns{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-}
