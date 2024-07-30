@@ -174,7 +174,7 @@ li a:hover{
 
 .book-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 300px));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     grid-auto-rows: auto;
     gap: 2rem;
     padding-top: 10px;
