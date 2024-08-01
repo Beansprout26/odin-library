@@ -208,6 +208,64 @@ li a:hover{
     aspect-ratio: 1/1;
 }
 
+.toggle-container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0;
+    position: relative;
+}
+
+.readToggleOn{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: rgb(230, 214, 239);
+
+}
+
+.readToggleOn:hover{
+    cursor: pointer;
+   
+}
+
+
+.readToggleOff{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: rgb(230, 214, 239);
+}
+
+.readToggleOff:hover{
+    cursor: pointer;
+}
+
+
+.delete{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+    float: right;
+    background-color: rgb(46, 41, 48);
+    color: aliceblue;
+    margin-bottom: 10px;
+    position:sticky;
+}
+
+.delete:hover{
+    background-color: aliceblue;
+    color: red;
+    cursor: pointer;
+}
+
+/* .delete i{
+    color: aliceblue;
+} */
+
+
 .newBookForm{
     display: none;
     /* border: solid blueviolet 2px; */

@@ -2,12 +2,15 @@ const myLibrary = [];
 
 
 //this is my book object
-function Book(title, author, pages, read, imgSrc){
+function Book(title, author, pages, read, imgSrc, readToggleOn, readToggleOff, deletebtn){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
     this.imgSrc = imgSrc;
+    this.readToggleOn = readToggleOn;
+    this.readToggleOff = readToggleOff;
+    this.deletebtn = deletebtn;
 }
 
 function displayNewBook(Book){
@@ -101,6 +104,27 @@ document.querySelector('.newBookForm').addEventListener('submit', function(event
     form.style.display = 'none';
   
 })
+
+
+// document.querySelector('.')
+
+// const toggleOnbtn = querySelector('.readToggleOn');
+// const toggleOffbtn = querySelector('.readToggleOff'); 
+
+
+
+function toggleRead(){
+    const toggleOnbtn = document.querySelector('.readToggleOn').addEventListener('click', function(){
+        this.style.display = 'none';
+        document.querySelector('.readToggleOff').style.display = 'block';
+    })
+
+    const toggleOffbtn = document.querySelector('.readToggleOff').addEventListener('click', function(){
+        this.style.display = 'none';
+        document.querySelector('.readToggleOn').style.display = 'block';
+    });
+    
+}toggleRead();
 
 
 
