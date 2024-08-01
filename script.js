@@ -41,18 +41,54 @@ function displayNewBook(Book){
     cardRead.classList.add('card-read');
     cardRead.innerHTML = `Read: ${Book.read ? 'Yes' : 'No'}`;
 
+    const toggleContainer = document.createElement('div');
+    toggleContainer.classList.add('toggle-container');
+
+    const cardToggleOn = document.createElement('button');
+    cardToggleOn.classList.add('readToggleOn');
+    cardToggleOn.innerHTML = `<i class="fa-solid fa-toggle-on fa-xl"></i>`;
+
+    const cardToggleOff = document.createElement('button');
+    cardToggleOff.classList.add('readToggleOff');
+    cardToggleOff.innerHTML = `<i class="fa-solid fa-toggle-off fa-xl"></i>`;
+
+    const cardDeleteBtn = document.createElement('button');
+    cardDeleteBtn.classList.add('deletebtn');
+    cardDeleteBtn.innerHTML = `<i class="fa-solid fa-trash" ></i>`;
+
     
     cardContent.appendChild(cardTitle);
     cardContent.appendChild(cardAuthor);
     cardContent.appendChild(cardPages);
     cardContent.appendChild(cardRead);
+    cardContent.appendChild(toggleContainer)
+    toggleContainer.appendChild(cardToggleOn)
+    toggleContainer.appendChild(cardToggleOff)
+    toggleContainer.appendChild(cardDeleteBtn)
+    
 
     bookCard.appendChild(img);
     bookCard.appendChild(cardContent);
 
     bookGrid.appendChild(bookCard);
 
+    cardToggleOn.addEventListener('click', function() {
+        cardToggleOff.style.display = 'block';
+        // cardToggleOn.style.display = 'none';
+        cardRead.innerHTML = 'Read: No';
+    });
+
+    cardToggleOff.addEventListener('click', function() {
+        cardToggleOn.style.display = 'block';
+        cardToggleOff.style.display = 'none';
+        cardRead.innerHTML = 'Read: Yes';
+    });
+
+    cardDeleteBtn.addEventListener('click', function() {
+        bookCard.remove();
+    });
 }
+
 
 
 //this selects the input in the form and the value that will be the output
@@ -66,21 +102,36 @@ function addBookToLibrary(Book){
     let imgUpload = document.getElementById('imgUpload').files[0];
 
     if (imgUpload) {
-        const reader = new FileReader(); // Create a new FileReader instance
+        const reader = new FileReader(); 
         reader.onload = function(e) {
-            const imgSrc = e.target.result; // Get the data URL of the uploaded image
-            let newBook = new Book(title, author, pages, read, imgSrc); // Create a new book object with the image data URL
-            myLibrary.push(newBook); // Add the new book to the library array
-            displayNewBook(newBook); // Display the new book on the DOM
+            const imgSrc = e.target.result; 
+            let newBook = new Book(title, author, pages, read, imgSrc); 
+            myLibrary.push(newBook); 
+            displayNewBook(newBook); 
         };
-        reader.readAsDataURL(imgUpload); // Read the file as a data URL
+        reader.readAsDataURL(imgUpload); 
     } else {
-        let newBook = new Book(title, author, pages, read, ''); // Create a new book object without an image
-        myLibrary.push(newBook); // Add the new book to the library array
-        displayNewBook(newBook); // Display the new book on the DOM
+        let newBook = new Book(title, author, pages, read, ''); 
+        myLibrary.push(newBook); 
+        displayNewBook(newBook); 
     }
 
-}
+    // const toggleYes = document.querySelector('.readToggleOn');
+    // const toggleNo = document.querySelector('.readToggleOff');
+
+    if(read = true){
+        document.querySelector('.readToggleOff').style.display = 'none';
+        document.querySelector('.readToggleOn').style.display = 'block';
+        // const cardRead = document.querySelector('.card-read');
+        // cardRead.innerHTML = 'Read: Yes';
+    }else{
+        document.querySelector('.readToggleOn').style.display = 'none';
+        // const cardRead = document.querySelector('.card-read');
+        // cardRead.innerHTML = 'Read: No';
+    }
+
+
+};
 
 
 
@@ -113,21 +164,40 @@ document.querySelector('.newBookForm').addEventListener('submit', function(event
 
 
 
-function toggleRead(){
-    const toggleOnbtn = document.querySelector('.readToggleOn').addEventListener('click', function(){
-        this.style.display = 'none';
-        document.querySelector('.readToggleOff').style.display = 'block';
-    })
+// function toggleRead(){
+//     const toggleOnbtn = document.querySelectorAll('.readToggleOn');
+//     toggleOnbtn.forEach(button => {
+//         button.addEventListener('click', function(event){
+//         event.target.closest('.readToggleOn');
+//         document.querySelector('.readToggleOff').style.display = 'block';
+//         const cardRead = document.querySelector('.card-read');
+//         // this.style.display = 'none';
+//         cardRead.innerHTML = 'Read: No';
+//     })
 
-    const toggleOffbtn = document.querySelector('.readToggleOff').addEventListener('click', function(){
-        this.style.display = 'none';
-        document.querySelector('.readToggleOn').style.display = 'block';
+//     const toggleOffbtn = document.querySelectorAll('.readToggleOff');toggleOffbtn.forEach(button => {
+//         button.addEventListener('click', function(event){
+//         event.target.closest('.readToggleOff');
+//         document.querySelector('.readToggleOn').style.display = 'block';
+//         const cardRead = document.querySelector('.card-read');
+//         this.style.display = 'none';
+//         cardRead.innerHTML = 'Read: Yes';
+//     });
+// })})}toggleRead();
+
+
+
+const deleteButtons = document.querySelectorAll('.deletebtn');
+
+deleteButtons.forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.target.closest('.book-card').remove();
     });
-    
-}toggleRead();
+});
 
-
-
+// document.querySelector('.deletebtn').addEventListener('click', function(event){
+//     event.target.closest('.book-card').remove();
+// })
 
 
 

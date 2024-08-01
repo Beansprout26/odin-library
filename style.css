@@ -3,6 +3,7 @@ body{
     margin: 0;
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
     /* position: relative; */
     
 }
@@ -15,6 +16,8 @@ img, picture{
     display: grid;
     grid-template-columns: 15% auto;
     grid-auto-rows: auto;
+    
+    
 }
 
 
@@ -95,8 +98,8 @@ li a:hover{
     display: grid;
     grid-auto-columns: auto;
     grid-template-rows: 100px 175px auto;
-    height: 100vh;
-    overflow-y: auto;
+    height: 100%;
+    /* overflow-y: auto; */
    
 }
 
@@ -110,6 +113,7 @@ li a:hover{
     background-color: white;
     position: sticky;
     top: 0;
+    z-index: 10;
     
 }
 
@@ -133,6 +137,7 @@ li a:hover{
     grid-column: 3/4;
     justify-self: right;
     padding-right: 5%;
+    /* z-index: 10; */
     
     /* animation: 2s infinite pulse; */
     /* animation-composition: add; */
@@ -150,10 +155,12 @@ li a:hover{
 .hero{
     padding: 20px;
     padding-top: 0;
-    position: sticky;
-    top: 100px;
+    /* position: sticky;
+    top: 100px; */
     overflow-x: hidden;
     background-color: white;
+    /* z-index: 10; */
+    
 }
 
 .hero .hero-card{
@@ -198,6 +205,7 @@ li a:hover{
     background-color: rgb(230, 214, 239);
     border-radius: 15px;
     box-shadow: 5px 5px 15px grey;
+    z-index: 1;
 
     
 }
@@ -206,6 +214,7 @@ li a:hover{
     padding-left: 20px;
     padding-right: 20px;
     aspect-ratio: 1/1;
+    z-index: 1;
 }
 
 .toggle-container{
@@ -213,6 +222,7 @@ li a:hover{
     justify-content: space-between;
     padding-top: 0;
     position: relative;
+    /* z-index: -1; */
 }
 
 .readToggleOn{
@@ -236,6 +246,7 @@ li a:hover{
     width: 30px;
     border: none;
     background-color: rgb(230, 214, 239);
+
 }
 
 .readToggleOff:hover{
@@ -243,7 +254,7 @@ li a:hover{
 }
 
 
-.delete{
+.deletebtn{
     border: none;
     border-radius: 5px;
     height: 30px;
@@ -252,10 +263,10 @@ li a:hover{
     background-color: rgb(46, 41, 48);
     color: aliceblue;
     margin-bottom: 10px;
-    position:sticky;
+    /* justify-self: end; */
 }
 
-.delete:hover{
+.deletebtn:hover{
     background-color: aliceblue;
     color: red;
     cursor: pointer;
