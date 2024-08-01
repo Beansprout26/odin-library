@@ -4,6 +4,7 @@ body{
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100%;
+    overflow-x: hidden;
     
 }
 
@@ -175,6 +176,12 @@ li a:hover{
     gap: 2rem;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+@media (max-width: 1500px) {
+    .book-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 @media (max-width: 1200px) {
