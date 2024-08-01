@@ -4,7 +4,6 @@ body{
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100%;
-    /* position: relative; */
     
 }
 
@@ -90,7 +89,6 @@ li a:hover{
     /* font-size: 20px; */
     padding: 15px;
     border-radius: 10px;
-    /* box-shadow: -10px 10px 5px blueviolet, 10px 3px 10px blueviolet, 10px 1px 10px blueviolet, 10px 1px 10px blueviolet; */
     
 }
 
@@ -137,12 +135,7 @@ li a:hover{
     grid-column: 3/4;
     justify-self: right;
     padding-right: 5%;
-    /* z-index: 10; */
-    
-    /* animation: 2s infinite pulse; */
-    /* animation-composition: add; */
-    /* animation-iteration-count: 3; */
-    /* animation-delay: 250ms; */
+  
 }
 
 #add-book-icon:hover{
@@ -155,8 +148,6 @@ li a:hover{
 .hero{
     padding: 20px;
     padding-top: 0;
-    /* position: sticky;
-    top: 100px; */
     overflow-x: hidden;
     background-color: white;
     /* z-index: 10; */
@@ -181,11 +172,23 @@ li a:hover{
 
 .book-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(4, 365px);
     grid-auto-rows: auto;
     gap: 2rem;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .book-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .book-card img{
@@ -220,10 +223,16 @@ li a:hover{
 .toggle-container{
     display: flex;
     justify-content: space-between;
-    padding-top: 0;
+    padding-top: 20px;
+    padding-bottom: 0;
     position: relative;
-    /* z-index: -1; */
+    
 }
+
+.card-read{
+    padding-bottom: 20px;
+}
+
 
 .readToggleOn{
     position: relative;
@@ -272,10 +281,6 @@ li a:hover{
     cursor: pointer;
 }
 
-/* .delete i{
-    color: aliceblue;
-} */
-
 
 .newBookForm{
     display: none;
@@ -289,10 +294,11 @@ li a:hover{
     padding-top: 20px;
     padding-bottom: 20px;
     align-content: center;
-    position: absolute;
-    left: 45%;
-    top: 15%;
-    box-shadow: 0 0 50px aliceblue, 0 0 50px aliceblue, 0 0 50px aliceblue;
+    position: fixed; 
+    left: 55%; 
+    top: 15%; 
+    transform: translateX(-50%); 
+   
 
 }
 

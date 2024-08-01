@@ -47,10 +47,12 @@ function displayNewBook(Book){
     const cardToggleOn = document.createElement('button');
     cardToggleOn.classList.add('readToggleOn');
     cardToggleOn.innerHTML = `<i class="fa-solid fa-toggle-on fa-xl"></i>`;
+    cardToggleOn.style.display = Book.read ? 'block' : 'block';
 
     const cardToggleOff = document.createElement('button');
     cardToggleOff.classList.add('readToggleOff');
     cardToggleOff.innerHTML = `<i class="fa-solid fa-toggle-off fa-xl"></i>`;
+    cardToggleOff.style.display = Book.read ? 'none' : 'block'; 
 
     const cardDeleteBtn = document.createElement('button');
     cardDeleteBtn.classList.add('deletebtn');
@@ -74,7 +76,6 @@ function displayNewBook(Book){
 
     cardToggleOn.addEventListener('click', function() {
         cardToggleOff.style.display = 'block';
-        // cardToggleOn.style.display = 'none';
         cardRead.innerHTML = 'Read: No';
     });
 
@@ -87,7 +88,12 @@ function displayNewBook(Book){
     cardDeleteBtn.addEventListener('click', function() {
         bookCard.remove();
     });
-}
+
+  
+};
+
+
+
 
 
 
@@ -116,21 +122,6 @@ function addBookToLibrary(Book){
         displayNewBook(newBook); 
     }
 
-    // const toggleYes = document.querySelector('.readToggleOn');
-    // const toggleNo = document.querySelector('.readToggleOff');
-
-    if(read = true){
-        document.querySelector('.readToggleOff').style.display = 'none';
-        document.querySelector('.readToggleOn').style.display = 'block';
-        // const cardRead = document.querySelector('.card-read');
-        // cardRead.innerHTML = 'Read: Yes';
-    }else{
-        document.querySelector('.readToggleOn').style.display = 'none';
-        // const cardRead = document.querySelector('.card-read');
-        // cardRead.innerHTML = 'Read: No';
-    }
-
-
 };
 
 
@@ -145,8 +136,7 @@ function openForm() {
     } else {
         console.error("Form not found");
     }
-}
-
+};
 
 document.querySelector('.newBookForm').addEventListener('submit', function(event){
     event.preventDefault();
@@ -154,36 +144,33 @@ document.querySelector('.newBookForm').addEventListener('submit', function(event
     form.reset();
     form.style.display = 'none';
   
-})
+});
 
 
-// document.querySelector('.')
+function toggleRead() {
+    const toggleOnbtn = document.querySelectorAll('.readToggleOn');
+    toggleOnbtn.forEach(button => {
+        button.addEventListener('click', function(event) {
+            const bookCard = event.target.closest('.book-card');
+            bookCard.querySelector('.readToggleOff').style.display = 'block';
+            const cardRead = bookCard.querySelector('.card-read');
+            cardRead.innerHTML = 'Read: No';
+        });
+    });
 
-// const toggleOnbtn = querySelector('.readToggleOn');
-// const toggleOffbtn = querySelector('.readToggleOff'); 
+    const toggleOffbtn = document.querySelectorAll('.readToggleOff');
+    toggleOffbtn.forEach(button => {
+        button.addEventListener('click', function(event) {
+            const bookCard = event.target.closest('.book-card');
+            bookCard.querySelector('.readToggleOn').style.display = 'block';
+            bookCard.querySelector('.readToggleOff').style.display = 'none';
+            const cardRead = bookCard.querySelector('.card-read');
+            cardRead.innerHTML = 'Read: Yes';
+        });
+    });
+}
 
-
-
-// function toggleRead(){
-//     const toggleOnbtn = document.querySelectorAll('.readToggleOn');
-//     toggleOnbtn.forEach(button => {
-//         button.addEventListener('click', function(event){
-//         event.target.closest('.readToggleOn');
-//         document.querySelector('.readToggleOff').style.display = 'block';
-//         const cardRead = document.querySelector('.card-read');
-//         // this.style.display = 'none';
-//         cardRead.innerHTML = 'Read: No';
-//     })
-
-//     const toggleOffbtn = document.querySelectorAll('.readToggleOff');toggleOffbtn.forEach(button => {
-//         button.addEventListener('click', function(event){
-//         event.target.closest('.readToggleOff');
-//         document.querySelector('.readToggleOn').style.display = 'block';
-//         const cardRead = document.querySelector('.card-read');
-//         this.style.display = 'none';
-//         cardRead.innerHTML = 'Read: Yes';
-//     });
-// })})}toggleRead();
+toggleRead();
 
 
 
@@ -195,9 +182,7 @@ deleteButtons.forEach(button => {
     });
 });
 
-// document.querySelector('.deletebtn').addEventListener('click', function(event){
-//     event.target.closest('.book-card').remove();
-// })
+
 
 
 
